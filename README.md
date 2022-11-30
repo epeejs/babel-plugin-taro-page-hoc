@@ -2,7 +2,7 @@
 
 用于编译时给 Taro 页面包裹自定义高阶组件，实现页面渲染前置逻辑添加
 
-例如登录等异步操作，解决入口组件（app.tsx）不能阻止子元素渲染（this.props.children）问题
+例如自动登录等异步操作，解决入口组件（app.tsx）不能阻止子元素（this.props.children）渲染问题
 
 ```ts
 // 例如页面 HomePage
