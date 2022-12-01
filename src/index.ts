@@ -8,7 +8,9 @@ const ignoreFlag = '@nohoc';
 
 export default function (babel: typeof Babel): Babel.PluginObj {
   const { types: t } = babel;
-  const appConfigPath = path.join(process.cwd(), './src/app.config.ts');
+  const srcPath = path.join(process.cwd(), './src');
+  const filenames = fs.readdirSync(srcPath);
+  const appConfigPath = `${srcPath}/${filenames.find((m) => m.includes('app.config.'))}`;
   let pages: string[] = [];
 
   if (fs.existsSync(appConfigPath)) {
