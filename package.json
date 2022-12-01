@@ -1,11 +1,11 @@
 {
   "name": "babel-plugin-taro-page-hoc",
-  "version": "0.0.0-beta1",
+  "version": "0.1.0",
   "description": "编译时添加自定义 HOC 包裹 Taro 页面组件",
   "main": "lib/index.js",
   "type": "commonjs",
   "scripts": {
-    "publish": "tsc && pnpm publish --tag=beta"
+    "publish": "tsc && pnpm publish"
   },
   "repository": {
     "type": "git",

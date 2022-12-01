@@ -6,7 +6,13 @@ import traverse from '@babel/traverse';
 
 const ignoreFlag = '@nohoc';
 
-export default function (babel: typeof Babel): Babel.PluginObj {
+export interface Options {
+  hocSource: string;
+  hocName?: string;
+}
+
+export default function (babel: typeof Babel, opts: Options): Babel.PluginObj {
+  const { hocSource, hocName = '__hoc__' } = opts;
   const { types: t } = babel;
   const srcPath = path.join(process.cwd(), './src');
   const filenames = fs.readdirSync(srcPath);
@@ -36,7 +42,6 @@ export default function (babel: typeof Babel): Babel.PluginObj {
     name: 'babel-plugin-taro-page-hoc',
     visitor: {
       ExportDefaultDeclaration(path, state) {
-        const { hocSource, hocName = '__hoc__' } = state.opts as any;
         const ignore = path.node.leadingComments?.some((m) => m.value.trim() === ignoreFlag);
         const filename = state.filename;
         const isPage = filename.includes('.config.')
