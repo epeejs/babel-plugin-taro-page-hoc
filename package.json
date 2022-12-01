@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "type": "commonjs",
   "scripts": {
-    "publish": "tsc && pnpm publish"
+    "release": "tsc && pnpm publish"
   },
   "repository": {
     "type": "git",
