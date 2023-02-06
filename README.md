@@ -23,6 +23,8 @@ import __hoc__ from 'src/hoc';
 export default __hoc__(HomePage);
 ```
 
+详细介绍文档 [如何解决 Taro 页面无法异步渲染问题](https://github.com/epeejs/daydayup/blob/main/docs/zjw/babel-plugin-taro-page-hoc.md)
+
 ## 安装
 
 ```sh
